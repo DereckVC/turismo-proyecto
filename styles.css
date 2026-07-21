@@ -172,3 +172,49 @@ h1, h2, h3 {
     transform: scaleX(1);
     transform-origin: left;
 }
+
+
+/* ===========================================================
+    INICIO
+=========================================================== */
+
+#inicio {
+    position: relative;
+    min-height: 88vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden;
+    padding-top: 64px;
+    padding-bottom: 64px;
+}
+
+#inicio::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(560px 360px at 12% 15%, var(--color-turquesa-suave), transparent 70%),
+        radial-gradient(480px 320px at 88% 82%, rgba(242, 161, 84, 0.10), transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+#inicio > * {
+    position: relative;
+    z-index: 1;
+}
+
+#nombre-proyecto {
+    max-width: 620px;
+    color: var(--color-texto-suave);
+    font-size: 18px;
+}
+
+#descripcion-proyecto {
+    max-width: 620px;
+    color: var(--color-texto-suave);
+    font-size: 18px;
+    line-height: 1.8;
+}
+
