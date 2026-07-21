@@ -23,7 +23,7 @@
 }
 
 /* -----------------------------------------------------------
-    RESETEO DE ESTILOS
+    RESETEO DE LA PAGINA
 ----------------------------------------------------------- */
 
 * {
@@ -68,5 +68,27 @@ h1, h2, h3 {
     font-family: var(--fuente-titulos);
     font-weight: 700;
     line-height: 1.2;
+}
+
+/* Etiqueta pequeña que abre cada sección, es decir el titulo que se ve */
+
+.etiqueta-seccion {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-family: var(--fuente-titulos);
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--color-turquesa);
+    margin-bottom: 16px;
+}
+
+.etiqueta-seccion::before {
+    content: '';
+    width: 22px;
+    height: 2px;
+    background-color: var(--color-turquesa);
 }
 
