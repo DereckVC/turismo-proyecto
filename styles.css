@@ -1,0 +1,72 @@
+/* -----------------------------------------------------------
+    VARIABLES DE COLOR Y MEDIDAS
+----------------------------------------------------------- */
+
+:root {
+    --color-fondo: #0a141f; /* fondo general */
+    --color-ftarjetas: #101e2e;     /* fondo de las tarjetas */
+    --color-ftarjetas-clara: #16283c; /* fondo de tarjetas al pasar el mouse */
+    --color-borde: rgba(255, 255, 255, 0.08);
+
+    --color-texto: #f2f6f9;          /* texto principal */
+    --color-texto-suave: #93a7bb;    /* texto secundario */
+
+    --color-turquesa: #2fd0c9;       /* color principal */
+    --color-turquesa-suave: rgba(47, 208, 201, 0.12); /* color secundario */
+    --color-ambar: #f2a154;          /* color secundario: atardecer */
+
+    --fuente-titulos: 'Sora', sans-serif;
+    --fuente-texto: 'Inter', sans-serif;
+
+    --ancho-maximo: 1120px;
+    --radio-borde: 14px;
+}
+
+/* -----------------------------------------------------------
+    RESETEO DE ESTILOS
+----------------------------------------------------------- */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px; /* para que el menú fijo no tape el título al saltar */
+}
+
+body {
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+    font-family: var(--fuente-texto);
+    line-height: 1.6;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+ul,ol {
+    list-style: none;
+}
+
+main > section {
+    max-width: var(--ancho-maximo);
+    margin: 0 auto;
+    padding: 96px 24px;
+}
+
+h1, h2, h3 {
+    font-family: var(--fuente-titulos);
+    font-weight: 700;
+    line-height: 1.2;
+}
+
