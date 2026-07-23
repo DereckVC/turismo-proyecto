@@ -272,6 +272,33 @@ h1, h2, h3 {
     color: var(--color-texto);
 }
 
+/* =======================
+    PROCESOS
+========================== */
+
+#pregunta-proceso {
+    font-size: clamp(24px, 3.4vw, 32px);
+    margin-bottom: 10px;
+}
+
+#tarjetas-proceso {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin-top: 32px;
+}
+
+.tarjeta-proceso h3 {
+    font-size: 16px;
+    margin-bottom: 12px;
+}
+
+.tarjeta-proceso p {
+    color: var(--color-texto-suave);
+    font-size: 14px;
+    margin-bottom: 18px;
+}
+
 /* ============================
         TARJETAS GENERALES
 =============================== */
