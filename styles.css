@@ -5,26 +5,25 @@
 ----------------------------------------------------------- */
 
 :root {
-    --color-fondo: #0a141f; /* fondo general */
-    --color-ftarjetas: #101e2e;     /* fondo de las tarjetas */
-    --color-ftarjetas-clara: #16283c; /* fondo de tarjetas al pasar el mouse */
+    --color-fondo: #15100b;          /* fondo general, marrón muy oscuro */
+    --color-ftarjetas: #221710;      /* fondo de las tarjetas */
+    --color-ftarjetas-clara: #2f2117; /* fondo de tarjetas al pasar el mouse */
     --color-borde: rgba(255, 255, 255, 0.08);
 
-    --color-texto: #f2f6f9;          /* texto principal */
-    --color-texto-suave: #93a7bb;    /* texto secundario */
+    --color-texto: #f7f1e6;          /* texto principal, crema cálido */
+    --color-texto-suave: #cdb69c;    /* texto secundario, tono canela */
 
-    --color-turquesa: #7fb6c4;       /* color principal */
-    --color-turquesa-suave: rgba(127, 182, 196, 0.18); /* color secundario */
-    --color-ambar: #f2a154;          /* color secundario atardecer */
-    --color-morado: #1c3a5e;
-    --color-morado-suave: rgba(28, 58, 94, 0.45);
+    --color-dorado: #d9ac4f;         /* dorado/mostaza: color principal, del anillo y el trigo del logo */
+    --color-dorado-suave: rgba(217, 172, 79, 0.14);
+    --color-chocolate: #7a4d2c;      /* marrón chocolate: color secundario, del fondo del logo */
+    --color-chocolate-suave: rgba(122, 77, 44, 0.3);
 
     --fuente-titulos: 'Sora', sans-serif;
     --fuente-texto: 'Inter', sans-serif;
 
     --ancho-maximo: 1120px;
     --radio-borde: 14px;
-    --alto-encabezado: 88px; /* alto aproximado del header, para calcular la portada */
+    --alto-encabezado: 100px; /* alto aproximado del header, para calcular la portada */
 }
 
 /* -----------------------------------------------------------
@@ -50,17 +49,21 @@ body {
     line-height: 1.6;
 }
 
+/* -----------------------------------------------------------
+    FONDO DE LA PAGINA
+----------------------------------------------------------- */
+
 body::before {
     content: "";
     position: fixed;
     inset: -80px;
     z-index: -1;
     background:
-        radial-gradient(720px 480px at 6% -5%, var(--color-turquesa-suave), transparent 65%),
-        radial-gradient(680px 460px at 100% 22%, var(--color-morado-suave), transparent 65%),
-        radial-gradient(640px 420px at 10% 100%, var(--color-morado-suave), transparent 65%),
-        radial-gradient(600px 400px at 96% 96%, var(--color-turquesa-suave), transparent 65%);
-    filter: blur(50px);  
+        radial-gradient(720px 480px at 6% -5%, var(--color-dorado-suave), transparent 65%),
+        radial-gradient(680px 460px at 100% 22%, var(--color-chocolate-suave), transparent 65%),
+        radial-gradient(640px 420px at 10% 100%, var(--color-chocolate-suave), transparent 65%),
+        radial-gradient(600px 400px at 96% 96%, var(--color-dorado-suave), transparent 65%);
+    filter: blur(60px);
 }
 
 img {
@@ -74,7 +77,7 @@ a {
 }
 
 a:focus-visible, button:focus-visible {
-    outline: 2px solid var(--color-turquesa);
+    outline: 2px solid var(--color-dorado);
     outline-offset: 3px;
     border-radius: 4px;
 }
@@ -94,11 +97,23 @@ main > section {
     padding: 100px 88px;
     border-radius: 32px;
     border: 1px solid rgba(255, 255, 255, 0.07);
-    background-color: rgba(11, 20, 32, 0.92);
+    background-color: rgba(34, 23, 16, 0.95);
     background-image: linear-gradient(160deg, rgba(255, 255, 255, 0.035), transparent 55%);
-    backdrop-filter: blur(18px);
-    box-shadow: 0 40px 82px -34px rgba(33, 109, 128, 0.65);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 40px 80px -32px rgba(73, 47, 13, 0.753);
     overflow: hidden;
+}
+
+/* Línea dorada fina de cada tarjeta*/
+main > section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 10%;
+    right: 10%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--color-dorado), transparent);
+    opacity: 0.6;
 }
 
 h1, h2, h3 {
@@ -118,7 +133,7 @@ h1, h2, h3 {
     font-weight: 600;
     letter-spacing: 0.14em;
     text-transform: uppercase;
-    color: var(--color-turquesa);
+    color: var(--color-dorado);
     margin-bottom: 16px;
 }
 
@@ -126,7 +141,7 @@ h1, h2, h3 {
     content: '';
     width: 22px;
     height: 2px;
-    background-color: var(--color-turquesa);
+    background-color: var(--color-dorado);
 }
 
 /* ===========================================================
@@ -142,29 +157,29 @@ h1, h2, h3 {
     justify-content: space-between;
     flex-wrap: wrap;
     gap: 16px;
-    padding: 20px 32px;
-    background-color: rgba(10, 20, 31, 0.8);
+    padding: 16px 32px;
+    background-color: rgba(21, 16, 11, 0.85);
     backdrop-filter: blur(10px);
     border-bottom: 1px solid var(--color-borde);
 }
 
 #logo-empresa {
-    height: 52px;
-    width: 52px;
-    object-fit: contain;
-    border-radius: 10px;
-    background-color: var(--color-ftarjetas);
-    padding: 4px;
+    height: 88px;
+    width: 88px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 2px solid var(--color-dorado);
+    background-color: #fff;
 }
 
 #contenedor-logo {
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 14px;
 }
 
 #contenedor-logo::after {
-    content: "SULLAWAYTA TOURS";
+    content: "Cardoz Café - Pastelería";
     font-family: var(--fuente-titulos);
     font-weight: 700;
     font-size: 18px;
@@ -182,7 +197,7 @@ h1, h2, h3 {
     position: relative;
     display: inline-block;
     padding: 4px 0px;
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 500;
     letter-spacing: 0.03em;
     color: var(--color-texto-suave);
@@ -196,7 +211,7 @@ h1, h2, h3 {
     bottom: 0;
     width: 100%;
     height: 1px;
-    background-color: var(--color-turquesa);
+    background-color: var(--color-dorado);
     transform: scaleX(0);
     transform-origin: right;
     transition: transform 0.3s ease;
@@ -234,10 +249,10 @@ h1, h2, h3 {
     z-index: 0;
 }
 
-    #inicio > * {
-        position: relative;
-        z-index: 1;
-    }
+#inicio > * {
+    position: relative;
+    z-index: 1;
+}
 
 #nombre-proyecto {
     max-width: 820px;
@@ -270,7 +285,7 @@ h1, h2, h3 {
 
 #datos-empresa, #datos-tecnologia {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 16px;
 }   
 
@@ -281,7 +296,7 @@ h1, h2, h3 {
     font-weight: 600;
     letter-spacing: 0.06em;
     text-transform: uppercase;
-    color: var(--color-turquesa);
+    color: var(--color-dorado);
     margin-bottom: 10px;
 }
 
@@ -403,6 +418,12 @@ h1, h2, h3 {
 ================ */
 #algoritmo h2 {
     font-size: clamp(24px, 3.4vw, 32px);
+    margin-bottom: 20px;
+}
+
+#descripcion-problema {
+    color: var(--color-texto-suave);
+    max-width: 760px;
     margin-bottom: 32px;
 }
 
@@ -437,12 +458,13 @@ h1, h2, h3 {
     width: 100%;
     aspect-ratio: 16 / 9;
     border-radius: 10px;
-    background-color: #0d1928;
+    background-color: #150e0a;
 }
 
 /* =============
     INFORME
 ================ */
+
 #informe h2 {
     font-size: clamp(24px, 3.4vw, 32px);
     margin-bottom: 24px;
@@ -453,8 +475,8 @@ h1, h2, h3 {
     align-items: center;
     gap: 10px;
     padding: 14px 26px;
-    background-color: var(--color-turquesa);
-    color: #06201d;
+    background-color: var(--color-dorado);
+    color: #2a1a0a;
     font-family: var(--fuente-titulos);
     font-weight: 700;
     font-size: 15px;
@@ -476,17 +498,19 @@ h1, h2, h3 {
     PIE DE PAGINA
 ===================== */
 #pie-pagina {
+    position: relative;
     max-width: var(--ancho-maximo);
     margin: 56px auto;
     padding: 88px 24px 56px;
     text-align: center;
     border-radius: 32px;
     border: 1px solid rgba(255, 255, 255, 0.07);
-    background-color: rgba(11, 20, 32, 0.92);
+    background-color: rgba(34, 23, 16, 0.95);
     background-image: linear-gradient(160deg, rgba(255, 255, 255, 0.035), transparent 55%);
-    backdrop-filter: blur(6px);
-    box-shadow: 0 40px 90px -34px rgba(0, 0, 0, 0.65);
-}   
+    backdrop-filter: blur(10px);
+    box-shadow: 0 40px 80px -32px rgba(0, 0, 0, 0.6);
+}
+
 
 #pie-pagina h2 {
     font-size: clamp(22px, 3vw, 28px);
@@ -514,7 +538,7 @@ h1, h2, h3 {
 
 .tarjeta-integrante:hover {
     transform: translateY(-4px);
-    border-color: rgba(47, 208, 201, 0.35);
+    border-color: rgba(217, 172, 79, 0.35);
 }
 
 .avatar-integrante {
@@ -525,8 +549,8 @@ h1, h2, h3 {
     height: 56px;
     margin-bottom: 16px;
     border-radius: 50%;
-    background: linear-gradient(135deg, var(--color-turquesa-suave), var(--color-morado-suave));
-    color: var(--color-turquesa);
+    background: linear-gradient(135deg, var(--color-dorado-suave), var(--color-chocolate-suave));
+    color: var(--color-dorado);
     font-family: var(--fuente-titulos);
     font-weight: 700;
     font-size: 18px;
@@ -568,7 +592,7 @@ h1, h2, h3 {
 .tarjeta-proceso:hover, .tarjeta-producto:hover, .tarjeta-prototipo:hover {
     transform: translateY(-4px);
     background-color: var(--color-ftarjetas-clara);
-    border-color: rgba(47, 208, 201, 0.35);
+    border-color: rgba(217, 172, 79, 0.35);
 }
 
 .numero-proceso {
@@ -579,10 +603,56 @@ h1, h2, h3 {
     height: 34px;
     margin-bottom: 16px;
     border-radius: 9px;
-    background-color: var(--color-turquesa-suave);
-    color: var(--color-turquesa);
+    background-color: var(--color-dorado-suave);
+    color: var(--color-dorado);
     font-family: var(--fuente-titulos);
     font-weight: 700;
     font-size: 15px;
 }
+
+/* -----------------------------------------------------------
+    BOTÓN QUE ENVUELVE UNA IMAGEN AMPLIABLE
+----------------------------------------------------------- */
+
+.boton-imagen {
+    all: unset;     
+    display: block;
+    position: relative;
+    width: 100%;
+    cursor: zoom-in;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.boton-imagen img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    background-color: #150e0a;
+    transition: transform 0.3s ease;
+}
+
+.boton-imagen:hover img {
+    transform: scale(1.03);
+}
+
+.boton-imagen::after {
+    content: "+";
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(21, 16, 11, 0.75);
+    color: var(--color-texto);
+    border-radius: 50%;
+    font-family: var(--fuente-titulos);
+    font-size: 17px;
+    line-height: 1;
+    backdrop-filter: blur(4px);
+}
+
 
